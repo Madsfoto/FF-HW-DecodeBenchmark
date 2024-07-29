@@ -8,6 +8,12 @@ ffmpeg -i INPUT_FILE -benchmark -f null - > INPUT_FILE-SW.txt
 
 List of hwaccels: -hwaccel auto, -hwaccel cuda, -hwaccel d3d11va, -hwaccel d3d12va, -hwaccel dxva2, -hwaccel nvdec, -hwaccel opencl, -hwaccel vulkan
 
-Example of use: 
+Example of hwaccel use: 
 ffmpeg -hwaccel auto -i INPUT_FILE -benchmark -f null - > INPUT_FILE-HW.txt
 
+The program takes all the mov/mp4 files in the current directory and creates a .bat file with each line being a compare line.
+Then it will ask to execute the bat (which may take a while)
+Then it will create a 1Speed.txt with a CSV file of the input filename;hwaccel;wallClockTime from ffmpeg. 
+
+
+This code requires ffmpeg.exe to be somewhere in PATH (or the current directory)
