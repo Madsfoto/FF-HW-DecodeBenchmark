@@ -1,0 +1,13 @@
+﻿**Unfinished**
+
+Very early test to see what h264 profile + levels are supported by ffmpeg as hardware decoded. 
+
+Taken from the code: 
+for each mov/mp4 file in the current dir do
+ffmpeg -i INPUT_FILE -benchmark -f null - > INPUT_FILE-SW.txt
+
+List of hwaccels: -hwaccel auto, -hwaccel cuda, -hwaccel d3d11va, -hwaccel d3d12va, -hwaccel dxva2, -hwaccel nvdec, -hwaccel opencl, -hwaccel vulkan
+
+Example of use: 
+ffmpeg -hwaccel auto -i INPUT_FILE -benchmark -f null - > INPUT_FILE-HW.txt
+
